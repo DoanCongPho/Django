@@ -1,0 +1,13 @@
+<h1>Conversations</h1>
+
+<ul>
+  {% for conv in conversations %}
+    <li>
+      <a href="{% url 'chatting:conversation' conv.pk %}">
+        {{ conv.name }} ({{ conv.type }})
+      </a>
+    </li>
+  {% empty %}
+    <li>No conversations yet.</li>
+  {% endfor %}
+</ul>
