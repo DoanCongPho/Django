@@ -1,3 +1,7 @@
 from django.test import TestCase
 
-# Create your tests here.
+
+
+
+# No display group with no admin
+# Can have more than 3 participants in direct 

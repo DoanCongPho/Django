@@ -1,16 +1,14 @@
 from django.http import HttpResponse
 from django.views import generic
 from .models import * 
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-
-
-class IndexView(generic.ListView): 
+class IndexView(LoginRequiredMixin, generic.ListView):
     template_name = "chatting/index.html"
     context_object_name = "conversations"
     model = Conversation 
 
-
-class ConversationView(generic.DetailView): 
+class ConversationView(LoginRequiredMixin, generic.DetailView): 
     model = Conversation
     template_name = "chatting/conversation.html"
 
@@ -23,4 +21,5 @@ class ConversationView(generic.DetailView):
 
 
         return context
+    
     

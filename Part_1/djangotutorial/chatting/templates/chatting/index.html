@@ -4,7 +4,7 @@
   {% for conv in conversations %}
     <li>
       <a href="{% url 'chatting:conversation' conv.pk %}">
-        {{ conv.name }} ({{ conv.type }})
+        {{ conv }} ({{ conv.type }})
       </a>
     </li>
   {% empty %}
